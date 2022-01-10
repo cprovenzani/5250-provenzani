@@ -8,6 +8,7 @@ namespace Mine.Models
     {
         Items,
         About,
+        Game
     }
     public class HomeMenuItem
     {
