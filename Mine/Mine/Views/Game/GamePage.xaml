@@ -14,6 +14,10 @@
                 WidthRequest="200"
                 HeightRequest="200">
             </Image>
+            <Button
+                Clicked="GameButton_Clicked"
+                Text="Go RedHawks">
+            </Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
