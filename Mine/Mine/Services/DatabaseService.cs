@@ -82,9 +82,28 @@ namespace Mine.Services
             return true;
         }
 
-        public Task<bool> DeleteAsync(string id)
+        /// <summary>
+        /// Database delete method
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>updated status, true or false</returns>
+        public async Task<bool> DeleteAsync(string id)
         {
-            throw new NotImplementedException();
+            //check if item exists before deleting
+            var data = await ReadAsync(id);
+            if (data == null)
+            {
+                return false;
+            }
+
+            //delete item
+            var result = await Database.DeleteAsync(data);
+            //return false if returned ID is 0
+            if (result == 0)
+            {
+                return false;
+            }
+            return true;
         }
 
         /// <summary>
