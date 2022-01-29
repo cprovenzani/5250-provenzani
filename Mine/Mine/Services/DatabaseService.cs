@@ -10,7 +10,7 @@ using Mine.Models;
 
 namespace Mine.Services
 {
-    public class DatabaseService
+    public class DatabaseService : IDataStore<ItemModel>
     {
         static readonly Lazy<SQLiteAsyncConnection> LazyInitializer = new Lazy<SQLiteAsyncConnection>(() =>
         {
@@ -35,6 +35,31 @@ namespace Mine.Services
                 }
                 initialized = true;
             }
+        }
+
+        public Task<bool> CreateAsync(ItemModel item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> UpdateAsync(ItemModel item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> DeleteAsync(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<ItemModel> ReadAsync(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<ItemModel>> IndexAsync(bool forceRefresh = false)
+        {
+            throw new NotImplementedException();
         }
     }
 }
